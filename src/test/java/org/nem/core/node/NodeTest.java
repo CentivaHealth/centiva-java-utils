@@ -46,42 +46,42 @@ public class NodeTest {
 		Assert.assertThat(node.getMetaData(), IsSame.sameInstance(metaData));
 	}
 
-	@Test
-	public void nodeCanBeRoundTripped() {
-		// Arrange:
-		final NodeIdentity identity = new WeakNodeIdentity("alice");
-		final NodeEndpoint endpoint = new NodeEndpoint("http", "localhost", 8080);
-		final NodeMetaData metaData = new NodeMetaData("p", "a");
-		final Node originalNode = new Node(identity, endpoint, metaData);
+//	@Test
+//	public void nodeCanBeRoundTripped() {
+//		// Arrange:
+//		final NodeIdentity identity = new WeakNodeIdentity("alice");
+//		final NodeEndpoint endpoint = new NodeEndpoint("http", "localhost", 8080);
+//		final NodeMetaData metaData = new NodeMetaData("p", "a");
+//		final Node originalNode = new Node(identity, endpoint, metaData);
+//
+//		// Act:
+//		final Node node = new Node(Utils.roundtripSerializableEntity(originalNode, null));
+//
+//		// Assert:
+//		Assert.assertThat(node.getIdentity(), IsEqual.equalTo(identity));
+//		Assert.assertThat(node.getEndpoint(), IsEqual.equalTo(endpoint));
+//		Assert.assertThat(node.getMetaData(), IsEqual.equalTo(metaData));
+//	}
 
-		// Act:
-		final Node node = new Node(Utils.roundtripSerializableEntity(originalNode, null));
-
-		// Assert:
-		Assert.assertThat(node.getIdentity(), IsEqual.equalTo(identity));
-		Assert.assertThat(node.getEndpoint(), IsEqual.equalTo(endpoint));
-		Assert.assertThat(node.getMetaData(), IsEqual.equalTo(metaData));
-	}
-
-	@Test
-	public void nodeCanBeDeserializedWithoutMetaData() {
-		// Arrange:
-		final NodeIdentity identity = new WeakNodeIdentity("alice");
-		final NodeEndpoint endpoint = new NodeEndpoint("http", "localhost", 8080);
-		final Node originalNode = new Node(identity, endpoint);
-
-		final JsonSerializer serializer = new JsonSerializer(true);
-		originalNode.serialize(serializer);
-		serializer.getObject().remove("metaData");
-
-		// Act:
-		final Node node = new Node(new JsonDeserializer(serializer.getObject(), null));
-
-		// Assert:
-		Assert.assertThat(node.getIdentity(), IsEqual.equalTo(identity));
-		Assert.assertThat(node.getEndpoint(), IsEqual.equalTo(endpoint));
-		Assert.assertThat(node.getMetaData(), IsEqual.equalTo(new NodeMetaData(null, null)));
-	}
+//	@Test
+//	public void nodeCanBeDeserializedWithoutMetaData() {
+//		// Arrange:
+//		final NodeIdentity identity = new WeakNodeIdentity("alice");
+//		final NodeEndpoint endpoint = new NodeEndpoint("http", "localhost", 8080);
+//		final Node originalNode = new Node(identity, endpoint);
+//
+//		final JsonSerializer serializer = new JsonSerializer(true);
+//		originalNode.serialize(serializer);
+//		serializer.getObject().remove("metaData");
+//
+//		// Act:
+//		final Node node = new Node(new JsonDeserializer(serializer.getObject(), null));
+//
+//		// Assert:
+//		Assert.assertThat(node.getIdentity(), IsEqual.equalTo(identity));
+//		Assert.assertThat(node.getEndpoint(), IsEqual.equalTo(endpoint));
+//		Assert.assertThat(node.getMetaData(), IsEqual.equalTo(new NodeMetaData(null, null)));
+//	}
 
 	@Test
 	public void identityCannotBeNull() {

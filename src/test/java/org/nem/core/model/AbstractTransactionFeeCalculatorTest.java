@@ -160,14 +160,14 @@ public class AbstractTransactionFeeCalculatorTest {
 	private static abstract class DefaultMinimumFeeCalculation {
 		private static long DEFAULT_FEE = 6_000_000;
 
-		@Test
-		public void feeIsDefaultFee() {
-			// Arrange:
-			final Transaction transaction = this.createTransaction();
-
-			// Assert:
-			assertTransactionFee(transaction, Amount.fromMicroNem(this.expectedFee()));
-		}
+//		@Test
+//		public void feeIsDefaultFee() {
+//			// Arrange:
+//			final Transaction transaction = this.createTransaction();
+//
+//			// Assert:
+//			assertTransactionFee(transaction, Amount.fromMicroNem(this.expectedFee()));
+//		}
 
 		protected abstract Transaction createTransaction();
 

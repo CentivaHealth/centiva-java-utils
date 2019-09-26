@@ -5,7 +5,7 @@ import org.hamcrest.core.*;
 import org.junit.*;
 import org.nem.core.serialization.*;
 import org.nem.core.test.ExceptionAssert;
-import wiremock.org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.*;
 

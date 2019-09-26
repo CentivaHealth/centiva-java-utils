@@ -33,7 +33,7 @@ public class SetOnce<T> {
 	 * @param value The inner object.
 	 */
 	public void set(final T value) {
-		if (null != this.value && null != value) {
+		if (null != this.value && null != value && this.value == value) {
 			throw new IllegalStateException("cannot change value because it is already set");
 		}
 

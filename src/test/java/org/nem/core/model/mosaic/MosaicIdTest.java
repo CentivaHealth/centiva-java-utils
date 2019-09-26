@@ -6,7 +6,7 @@ import org.junit.*;
 import org.nem.core.model.namespace.NamespaceId;
 import org.nem.core.serialization.*;
 import org.nem.core.test.*;
-import wiremock.org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.*;
 

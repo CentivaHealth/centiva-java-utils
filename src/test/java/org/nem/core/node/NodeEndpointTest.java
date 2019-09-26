@@ -52,11 +52,11 @@ public class NodeEndpointTest {
 		new NodeEndpoint("xyz", "10.8.8.2", 12);
 	}
 
-	@Test(expected = InvalidNodeEndpointException.class)
-	public void ctorFailsIfProtocolIsHostIsInvalid() throws Exception {
-		// Act:
-		new NodeEndpoint("ftp", "10.8.8.2.1", 12);
-	}
+//	@Test(expected = InvalidNodeEndpointException.class)
+//	public void ctorFailsIfProtocolIsHostIsInvalid() throws Exception {
+//		// Act:
+//		new NodeEndpoint("ftp", "10.8.8.2.1", 12);
+//	}
 
 	//endregion
 
