@@ -1,3 +1,5 @@
+package org.hit.utils;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
